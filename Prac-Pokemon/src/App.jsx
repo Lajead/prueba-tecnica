@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PokemonLista from './PokemonLista';
-import PokemonDetalles from './PokemonDetalles';
+import AttendanceForm from './AttendanceForm';
+import AdminView from './AdminView';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PokemonLista />} />
-        <Route path="/pokemon/:name" element={<PokemonDetalles />} />
+        <Route path="/" element={<AttendanceForm />} />
+        <Route path="/admin" element={<AdminView />} />
       </Routes>
     </Router>
   );
