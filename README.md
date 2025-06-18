@@ -1,7 +1,17 @@
----------------------------------------------------------------Practica Pokemon------------------------------------------------------
+# Registro de Asistencia
 
-1.- se realizo la practica mediante la herramienta de compilacion VITE.js.
+Esta aplicaci\u00f3n es un ejemplo sencillo de registro de entrada y salida de usuarios. Est\u00e1 construida con React y Vite.
 
-2.- tiene un diseño practico y sencillo.
+## Caracter\u00edsticas
 
-3.- para correr la aplicacion se debe de contar con node.js para correr el comando "npm run dev", posteriormente se levantara un localhost y precionando los botones "o + enter" se abrira el navegador predeterminado y se mostrara en pantalla la pagina corriendo y sus funcionalidades correspondientes.
+- Permite capturar una foto desde la c\u00e1mara del navegador.
+- Registra coordenadas geogr\u00e1ficas, fecha y hora del registro.
+- Soporta turnos diurno (9am a 7pm) y nocturno.
+- Guarda los registros en `localStorage` y cuenta con una vista de administraci\u00f3n para consultarlos.
+- Incluye una pantalla de inicio de sesi\u00f3n para identificar a cada usuario.
+
+## Uso
+
+1. Instalar dependencias con `npm install` dentro de la carpeta `Prac-Pokemon`.
+2. Ejecutar `npm run dev` y abrir la aplicaci\u00f3n.
+3. Primero se muestra el formulario de inicio de sesi\u00f3n. Tras autenticarse se accede al registro en `/attendance` y en `/admin` se consultan todos los registros.
