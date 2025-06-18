@@ -9,4 +9,4 @@ npm install
 npm run dev
 ```
 
-La p\u00e1gina principal permite capturar una foto y registrar la ubicaci\u00f3n. En `/admin` se muestran todos los registros almacenados en `localStorage`.
+Al iniciar se muestra un formulario de login. Tras acceder, se puede capturar una foto y registrar la ubicaci\u00f3n desde `/attendance`. En `/admin` se muestran todos los registros almacenados en `localStorage`.

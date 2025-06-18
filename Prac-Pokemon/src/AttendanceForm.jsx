@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AttendanceForm() {
   const videoRef = useRef(null);
@@ -6,8 +7,13 @@ function AttendanceForm() {
   const [image, setImage] = useState(null);
   const [position, setPosition] = useState({ lat: null, lon: null });
   const [shift, setShift] = useState('day');
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!localStorage.getItem('currentUser')) {
+      navigate('/');
+      return;
+    }
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
         if (videoRef.current) videoRef.current.srcObject = stream;
@@ -34,6 +40,7 @@ function AttendanceForm() {
     const records = JSON.parse(localStorage.getItem('attendance') || '[]');
     records.push({
       id: Date.now(),
+      user: localStorage.getItem('currentUser'),
       type,
       timestamp: new Date().toISOString(),
       lat: position.lat,
@@ -60,6 +67,7 @@ function AttendanceForm() {
           <option value="night">Nocturno</option>
         </select>
       </div>
+      <button onClick={() => { localStorage.removeItem('currentUser'); navigate('/'); }}>Cerrar sesión</button>
       <div>
         <button onClick={() => save('entrada')}>Registrar Entrada</button>
         <button onClick={() => save('salida')}>Registrar Salida</button>

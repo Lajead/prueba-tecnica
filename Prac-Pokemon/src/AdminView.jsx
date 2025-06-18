@@ -14,6 +14,7 @@ function AdminView() {
       <table>
         <thead>
           <tr>
+            <th>Usuario</th>
             <th>Tipo</th>
             <th>Fecha y hora</th>
             <th>Turno</th>
@@ -24,6 +25,7 @@ function AdminView() {
         <tbody>
           {records.map(rec => (
             <tr key={rec.id}>
+              <td>{rec.user}</td>
               <td>{rec.type}</td>
               <td>{new Date(rec.timestamp).toLocaleString()}</td>
               <td>{rec.shift === 'day' ? 'Diurno' : 'Nocturno'}</td>
